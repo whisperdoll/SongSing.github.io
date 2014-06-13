@@ -11,8 +11,8 @@ body
 {
 	background-color:black;
 	background-image: url(../images/bg.png);
-	background-repeat:repeat-x;
 	background-position:center;
+	background-size:cover;
 }
 
 #header
