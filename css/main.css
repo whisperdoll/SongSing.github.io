@@ -36,25 +36,30 @@ body
 	font-size:18px;
 }
 
-#nav a
+#nav a, a
 {
 	color:white;
 	text-decoration:none;
 }
 
-#nav a:hover
+#nav a:hover, a:hover
 {
 	color:#FF8888;
 }
 
-#nav a:active
+#nav a:active, a:active
 {
 	color:#FF5555;
 }
 
+a
+{
+	text-decoration:underline;
+}
+
 #nav td
 {
-	width:25%;
+	width:20%;
 	padding:4px;
 	text-align:center;
 }
