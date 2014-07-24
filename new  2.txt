@@ -1,0 +1,9 @@
+({
+	onBattleFinished: function(id, winner, loser, res)
+	{
+		if (winner == client.ownId() || loser == client.ownId())
+		{
+			client.findBattle(1, true, true, 1000, false);
+		}
+	}
+})
