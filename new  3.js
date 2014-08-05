@@ -16,6 +16,22 @@ Array.prototype.indexOf = function (item, caseSensitive)
 	return -1;
 };
 
+String.prototype.args = function()
+{
+	var arg = arguments;
+	
+	var ret = this;
+	
+	ret = ret.replace(/(%[0-9]+)/g, "($1)"); // for %10 etc
+	
+	for (var i = 0; i < arg.length; i++)
+	{	
+		ret = ret.replace(new RegExp("\\(%" + (i + 1) + "\\)", "g"), arg[i].toString());
+	}
+	
+	return ret;
+};
+
 String.prototype.indexOf = function(str)
 {
 	if (str === undefined || str.length === 0 || str.length > this.length)
@@ -263,6 +279,7 @@ var __names = [ "ßroken Glass" ];
 var network = client.network();
 var border = "»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»:";
 var tours = [];
+var battles = {};
 
 function say(message, channel)
 {
@@ -379,16 +396,36 @@ Tour.prototype.decideMatchup(matchup, winner)
 
 Tour.prototype.hasMatchup(p1, p2)
 {
+	return this.matchup(p1, p2) !== -1;
+};
+
+Tour.prototype.matchup = function(p1, p2)
+{
 	if (this.state !== "running")
-		return false;
+		return -1;
 		
 	var m = this.matchups();
 	
 	for (var i = 0; i < m.length; i++)
 	{
-		
+		if ((p1 === m[i][0] && p2 === m[i][1]) || (p1 === m[i][1] && p2 === m[i][0]))
+		{
+			return i;
+		}
 	}
+	
+	return -1;
 };
+};
+
+function Battle(id, p1, p2, tier, mode)
+{
+	this.id = id;
+	this.p1 = p1;
+	this.p2 = p2;
+	this.tier = tier;
+	this.mode = mode;
+}
 
 ({
 
@@ -403,14 +440,22 @@ Tour.prototype.hasMatchup(p1, p2)
 	},
 	onBattleStarted: function(bid, p1, p2, tier, mode)
 	{
-		
+		battles[bid] = new Battle(bid, p1, p2, tier, mode);
 	},
 	onBattleFinished: function(bid, winner, loser, res)
 	{
 		for (var i = 0; i < tours.length; i++)
 		{
-			if (tours[i].hasPlayer(winner
+			var hm = tours[i].matchup(winner, loser);
+			
+			if (hm !== -1)
+			{
+				tours[i].decideMatchup(hm, tours[i].matchups()[hm].indexOf(winner));
+				me(client.name(winner) + " defeated " + client.name(loser) + " and moves on!");
+			}
 		}
-	},
+		
+		delete battles[bid];
+	}
 
 });
