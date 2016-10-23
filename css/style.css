@@ -1,0 +1,104 @@
+body {
+  font-family:Helvetica;
+}
+
+#title {
+  position:absolute;
+  left:0;
+  top:0;
+  right:0;
+  height:64px;
+  line-height:64px;
+  padding:0 16px;
+  font-size:32px;
+  background-color:black;
+  color:white;
+}
+
+#nav {
+  position:absolute;
+  left:0;
+  top:64px;
+  right:0;
+  background-color:rgba(255,255,255,0.9);
+  font-variant:small-caps;
+  font-size:24px;
+  height:52px;
+  line-height:52px;
+  padding:0 8px;
+}
+
+.nav-item {
+  color:black;
+  text-decoration:none;
+  padding:0 16px;
+  height:100%;
+  display:inline-block;
+}
+
+.nav-item:hover {
+  background:#BBBBBB;
+}
+
+#background {
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  top:64px;
+  background-size:cover;
+  background-position:center;
+  z-index:-100;
+}
+
+#container {
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  top:116px;
+  background-color:rgba(0,0,0,0.8);
+  padding:12px;
+  color:white;
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+
+.centered {
+  text-align:centere
+}
+
+.pane-built {
+  display:block;
+  background-image:url("images/soundcloud.png");
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+  border:2px solid #000;
+  width:512px;
+  height:192px;;
+  position:relative;
+  float:left;
+  margin:8px 8px;
+  background-color:white;
+}
+
+.pane-built-title {
+  background-color:rgba(0,0,0,0.9);
+  color:white;
+  text-decoration:none;
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  font-size:26px;
+  padding:4px 12px;
+  box-sizing:border-box;
+  mz-transition: top 2s;
+}
+
+.pane-built-desc {
+  display:none;
+  font-size:18px;
+  color:#EEEEEE;
+}
