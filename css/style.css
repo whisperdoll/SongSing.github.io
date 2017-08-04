@@ -58,15 +58,20 @@ body {
   right:0;
   bottom:0;
   top:116px;
-  background-color:rgba(0,0,0,0.8);
+  background-color:black;
   padding:12px;
   color:white;
   overflow-x:hidden;
   overflow-y:auto;
+  transition:background-color 1s;
 }
 
 .centered {
-  text-align:centere
+  text-align:center;
+}
+
+.pane {
+  opacity:0;
 }
 
 .pane-built {
@@ -82,6 +87,7 @@ body {
   float:left;
   margin:8px 8px;
   background-color:white;
+  transition:opacity 1s;
 }
 
 .pane-built-title {

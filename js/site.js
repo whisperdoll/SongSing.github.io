@@ -5,13 +5,13 @@ function init() {
 }
 
 function randomize() {
-    var wallpapers = 16;
+    var wallpapers = 21;
     var wp = Math.floor(Math.random() * wallpapers);
 
     var quotes = [
         "what do you want.",
         "professional website",
-        "would you want to date maybe",
+        "it hurts",
         "don't click anything please",
         "80 billion dead cops",
         "lightning mcqueen's dead dad on the racetrack",
@@ -19,7 +19,14 @@ function randomize() {
     ];
     var q = quotes[Math.floor(Math.random() * quotes.length)];
 
-    document.getElementById("background").style["background-image"] = "url('images/backgrounds/" + wp + ".png')";
+    var img = new Image();
+
+    img.onload = function() {
+        document.getElementById("background").style["background-image"] = "url('" + this.src + "')";
+        document.getElementById("container").style["background-color"] = "rgba(0,0,0,0.8)";
+    };
+
+    img.src = "images/backgrounds/" + wp + ".png";
     document.getElementById("title").textContent = q;
 };
 
@@ -28,10 +35,9 @@ function buildPanes() {
 
     Array.prototype.forEach.call(panes, function(pane) {
         pane.setAttribute("target", "_blank");
-        var d = pane;
-        d.className = "pane-built";
+        let d = pane;
+        d.className += " pane-built";
         console.log(pane);
-        d.style["background-image"] = "url('" + pane.getAttribute("src") + "')";
 
         var dt = document.createElement("div");
         dt.className = "pane-built-title";
@@ -41,6 +47,15 @@ function buildPanes() {
         dd.className = "pane-built-desc";
         dd.innerHTML = pane.innerHTML;
         pane.textContent = "";
+
+        var img = new Image();
+
+        img.onload = function() {
+            d.style["background-image"] = "url('" + this.src + "')";
+            d.style.opacity = "1";
+        };
+
+        img.src = pane.getAttribute("src");
 
         d.appendChild(dt);
         dt.appendChild(dd);
