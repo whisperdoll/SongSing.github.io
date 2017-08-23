@@ -15,7 +15,13 @@ function randomize() {
         "don't click anything please",
         "80 billion dead cops",
         "lightning mcqueen's dead dad on the racetrack",
-        ":~)"
+        ":~)",
+        "my name is jalypso now",
+        "i don't own any of this art btw",
+        "i hate white people",
+        "born to die",
+        "I LOVE BEAT DETECTIVES",
+        "drink vanilla almond milk"
     ];
     var q = quotes[Math.floor(Math.random() * quotes.length)];
 

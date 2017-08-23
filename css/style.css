@@ -11,29 +11,32 @@ body {
   line-height:64px;
   padding:0 16px;
   font-size:32px;
-  background-color:black;
-  color:white;
+  background-color:#111;
+  color:#eee;
 }
 
 #nav {
   position:absolute;
-  left:0;
-  top:64px;
+  top:0;
   right:0;
-  background-color:rgba(255,255,255,0.9);
+  color:#111;
+  background-color:#eee;
   font-variant:small-caps;
   font-size:24px;
-  height:52px;
-  line-height:52px;
-  padding:0 8px;
+  height:64px;
+  line-height:64px;
+  padding:0;
 }
 
 .nav-item {
-  color:black;
+  color:#111;
   text-decoration:none;
-  padding:0 16px;
+  padding:0 24px;
   height:100%;
   display:inline-block;
+  box-sizing:border-box;
+  margin:0;
+  float:left;
 }
 
 .nav-item:hover {
@@ -57,7 +60,7 @@ body {
   left:0;
   right:0;
   bottom:0;
-  top:116px;
+  top:64px;
   background-color:black;
   padding:12px;
   color:white;
@@ -76,13 +79,12 @@ body {
 
 .pane-built {
   display:block;
-  background-image:url("images/soundcloud.png");
   background-repeat:no-repeat;
   background-size:cover;
   background-position:center;
   border:2px solid #000;
   width:512px;
-  height:192px;;
+  height:192px;
   position:relative;
   float:left;
   margin:8px 8px;
