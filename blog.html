@@ -1,0 +1,16 @@
+---
+title: Blog
+header: Blog
+---
+{% if site.posts.size == 0 %}
+    <p>Coming soon...</p>
+{% else %}
+    <ul>
+        {% for post in site.posts %}
+            <li>
+                <h2><a href="{{ post.url | relative_link }}">{{ post.title }}</a></h2>
+                <p>{{ post.excerpt }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

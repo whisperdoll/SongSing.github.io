@@ -1,0 +1,26 @@
+<div id="side">
+    <div id="side-content">
+        <div id="title">SongSing</div>
+        <div id="subtitle">I hope you're having a nice day</div>
+        <nav>
+            {% for item in site.data.navigation %}
+                <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>{{ item.name }}</a>
+            {% endfor %}
+        </nav>
+    </div>
+    <script>
+        var image = new Image();
+        image.onload = function()
+        {
+            image.style.opacity = "0";
+            image.style.transition = "0.5s opacity ease-out";
+            document.getElementById("side").insertBefore(image, document.getElementById("side-content"));
+            setTimeout(function()
+            {
+                image.style.opacity = "1";
+            }, 50);
+        };
+        image.id = "side-background";
+        image.src = "{{ site.baseurl }}/img/bg.jpg";
+    </script>
+</div>

@@ -1,0 +1,15 @@
+---
+title: Projects
+header: Projects
+---
+<ul>
+    {% for project in site.projects %}
+        <li>
+            <h2><a href="{{ project.url | relative_link }}">{{ project.name }}</a></h2>
+            {{ project.excerpt }}
+            {% if project.link %}
+                <a target="_blank" href="{{ project.link }}">Check it out here</a>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
