@@ -129,3 +129,118 @@ $sideWidth: 500px;
     font-size: 18px;
     font-weight: 400;
 }
+
+@media screen and (max-width: 1024px)
+{
+    #side, #side-content, #side-background
+    {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 64px;
+        box-sizing: border-box;
+    }
+    
+    #side
+    {
+        background-color: #000;
+    
+        #side-background
+        {
+            padding: 0;
+            object-fit: cover;
+        }
+    
+        #side-content
+        {
+            background-image: none;
+            background-color: rgba(0,0,0,0.6);
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            padding: 0;
+            color: #eee;
+        }
+    
+        $rightPadding: 16px;
+        #title
+        {
+            font-size: 32px;
+            line-height: 64px;
+            padding: 0 32px;
+            
+            a
+            {
+                color: #eee;
+                text-decoration: none;
+            }
+
+            display: none;
+        }
+    
+        #subtitle
+        {
+            display: none;
+        }
+    
+        nav
+        {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            overflow-x: auto;
+            overflow-y: hidden;
+    
+            a
+            {
+                color: white;
+                text-decoration: none;
+                margin: 0;
+                font-size: 32px;
+                display: block;
+                width: auto;
+                text-align: right;
+                padding: 0 16px;
+                box-sizing: border-box;
+                line-height: 64px;
+
+                @media screen and (max-width: 480px)
+                {
+                    font-size: 18px;
+                }
+
+                @media screen and (max-width: 340px)
+                {
+                    font-size: 14px;
+                }
+
+                @media screen and (max-width: 280px)
+                {
+                    font-size: 10px;
+                }
+    
+                &:hover
+                {
+                    background: white;
+                    color: #111;
+                }
+            }
+    
+            .current
+            {
+                background-color: rgba(255,255,255,0.2);
+            }
+        }
+    }
+
+    #content
+    {
+        $sidePadding: 48px;
+        padding: 32px $sidePadding;
+        padding-top: 72px;
+        max-width: 700px;
+        font-size: 18px;
+        font-weight: 400;
+    }
+}
