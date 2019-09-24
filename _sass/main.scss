@@ -260,8 +260,10 @@ $sideWidth: 500px;
         $sidePadding: 48px;
         padding: 32px $sidePadding;
         padding-top: 72px;
+        width: 100%;
         max-width: 700px;
         font-size: 18px;
         font-weight: 400;
+        box-sizing: border-box;
     }
 }
