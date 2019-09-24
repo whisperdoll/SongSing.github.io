@@ -2,6 +2,7 @@
   link: /
 - name: Projects
   link: /projects.html
+  collection: projects
 - name: About
   link: /about.html
 - name: Blog

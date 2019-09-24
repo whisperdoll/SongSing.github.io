@@ -4,7 +4,7 @@
         <div id="subtitle">I hope you're having a nice day</div>
         <nav>
             {% for item in site.data.navigation %}
-                <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>{{ item.name }}</a>
+                <a href="{{ item.link }}" {% if page.url == item.link or (item.collection and item.collection == page.collection) %}class="current"{% endif %}>{{ item.name }}</a>
             {% endfor %}
         </nav>
     </div>

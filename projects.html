@@ -4,12 +4,19 @@ header: Projects
 ---
 <ul>
     {% for project in site.projects %}
-        <li>
+        <li class="project-item">
             <h2><a href="{{ project.url | relative_link }}">{{ project.name }}</a></h2>
             {{ project.excerpt }}
             {% if project.link %}
                 <a target="_blank" href="{{ project.link }}">Check it out here</a>
             {% endif %}
+            {% if project.github %}
+                {% if project.link %} | {% endif %}
+                <a target="_blank" href="{{ project.github }}">View it on Github</a>
+            {% endif %}
         </li>
     {% endfor %}
+    <li class="project-item">
+        <h2>I'll put more up soon...</h2>
+    </li>
 </ul>

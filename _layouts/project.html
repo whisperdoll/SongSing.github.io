@@ -3,4 +3,12 @@ layout: default
 ---
 <h1 class="header"><span class="breadcrumb"><a href="/projects.html">Projects</a> / </span>{{ page.name }}</h1>
 {{ content }}
-<a target="_blank" href="{{ page.link }}">Check it out here</a>
+{% if page.link %}
+    <p><a target="_blank" href="{{ page.link }}">Check it out here</a></p>
+{% endif %}
+{% if page.github %}
+    <p><a target="_blank" href="{{ page.github }}">View it on Github</a></p>
+{% endif %}
+{% for src in page.images %}
+    <a href="/img/{{ src }}"><img src="/img/{{ src }}" class="screenshot" /></a>
+{% endfor %}

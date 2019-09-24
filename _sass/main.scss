@@ -10,10 +10,16 @@ html, body
 }
 
 $accentColor1: #df2a69;
+$accentColor2: darken($accentColor1, 13%);
 
 a
 {
     color: $accentColor1;
+
+    &:hover
+    {
+        color: $accentColor2;
+    }
 }
 
 h1.header
@@ -117,6 +123,21 @@ $sideWidth: 500px;
         {
             background-color: rgba(255,255,255,0.2);
         }
+    }
+}
+
+.screenshot
+{
+    width: 100%;
+}
+
+.project-item
+{
+    margin-bottom: 24px;
+
+    & > *
+    {
+        margin: 12px 0;
     }
 }
 

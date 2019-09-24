@@ -2,6 +2,7 @@
 name: Avatar Cropper
 title: Avatar Cropper
 link: https://songsing.github.io/avatarcropper
+github: https://github.com/SongSing/avatarcropper
 ---
 Web-based photo cropper specifically designed for profile pictures. Under spare-time development since July 2017.
 
