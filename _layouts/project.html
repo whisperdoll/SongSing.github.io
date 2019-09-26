@@ -3,12 +3,20 @@ layout: default
 ---
 <h1 class="header"><span class="breadcrumb"><a href="/projects.html">Projects</a> / </span>{{ page.name }}</h1>
 {{ content }}
+
 {% if page.link %}
-    <p><a target="_blank" href="{{ page.link }}">Check it out here</a></p>
+    <p><a target="_blank" href="{{ page.link }}">Check it out here</a>
+{% else if page.github %}
+    <p>
 {% endif %}
+
 {% if page.github %}
-    <p><a target="_blank" href="{{ page.github }}">View it on Github</a></p>
+    {% if page.link %} | {% endif %}
+    <a target="_blank" href="{{ page.github }}">View it on Github</a></p>
+{% else if page.link %}
+    </p>
 {% endif %}
+
 {% for src in page.images %}
     <a href="/img/{{ src }}"><img src="/img/{{ src }}" class="screenshot" /></a>
 {% endfor %}
