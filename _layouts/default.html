@@ -9,7 +9,15 @@
     {% feed_meta %}
     {% seo %}
     {% if jekyll.environment == "production" %}
-        <!-- analytics -->
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104924541-2"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-104924541-2');
+        </script>
     {% endif %}
 </head>
 <body>
