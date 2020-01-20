@@ -126,12 +126,20 @@ $sideWidth: 500px;
     }
 }
 
-.screenshot
+#content img, #content video
 {
     width: 100%;
 }
 
-.project-item
+.pixelated
+{
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}
+
+.project-item, .blog-item
 {
     margin-bottom: 24px;
 

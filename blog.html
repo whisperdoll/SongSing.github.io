@@ -8,7 +8,7 @@ header: Blog
 {% else %}
     <ul>
         {% for post in site.posts %}
-            <li>
+            <li class="blog-item">
                 <h2><a href="{{ post.url | relative_link }}">{{ post.title }}</a></h2>
                 <p>{{ post.excerpt }}</p>
             </li>

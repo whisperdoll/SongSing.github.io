@@ -29,5 +29,12 @@
         {{ content }}
         <p id="footer">&copy; 2019 me | <a href="/privacy.html">Privacy Policy</a></p>
     </div>
+    <script>
+        var images = document.querySelectorAll("#content img");
+        for (var i = 0; i < images.length; i++)
+        {
+            images[i].outerHTML = "<a href='" + images[i].src + "'>" + images[i].outerHTML + "</a>";
+        }
+    </script>
 </body>
 </html>
