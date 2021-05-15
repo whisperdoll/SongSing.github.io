@@ -139,6 +139,13 @@ $sideWidth: 500px;
     image-rendering: pixelated;
 }
 
+.side
+{
+    height: 400px;
+    width: auto !important;
+    float: right;
+}
+
 .project-item, .blog-item
 {
     margin-bottom: 24px;

@@ -3,14 +3,15 @@ layout: default
 title: About
 header: About
 ---
+
+<img class="side" alt="Brown-haired girl with a neutral expression." src="{{ site.baseurl }}/img/me.jpg" />
+
 My name is Mina Kemp and I am an angel (like from EVA).
 
-I'm a Computer Science student graduating in December 2020, and I'm primarily interested in creating things.
+I'm a Computer Science graduate (December 2020), and I'm primarily interested in creating things.
 
-Wow, that's really vague. But that's just because I tend to make a lot of (not necessarily related) things, such as web and desktop applications, electronic music, video games, and written stories.
+Examples of these things can be found on the [projects page](/projects.html), but in general they tend to be web applications, desktop software, or other types of art.
 
-To see some of my work, check out the [projects page](/projects.html)!
+My favorite programming languages are C# and Python, but I am also proficient with JavaScript/TypeScript, C(++), Java, and Ruby.
 
-You can also check out my <a target="_blank" href="https://github.com/SongSing">Github</a> if you want! Pretty much everything I make is open-source.
-
-Okay bye :)
+For a more comprehensive list of my projects (i.e. everything I have not finished) you can check out my <a target="_blank" href="https://github.com/SongSing">Github</a>. Pretty much everything I make is open-source!

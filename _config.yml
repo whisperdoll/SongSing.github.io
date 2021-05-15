@@ -1,6 +1,9 @@
 collections:
   projects:
     output: true
+  posts:
+    output: true
+    permalink: /blog/:title
 
 defaults:
   - scope:

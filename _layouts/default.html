@@ -27,7 +27,7 @@
             <h1 class="header">{{ page.header }}</h1>
         {% endif %}
         {{ content }}
-        <p id="footer">&copy; 2019 me | <a href="/privacy.html">Privacy Policy</a></p>
+        <p id="footer">&copy; {{ 'now' | date: "%Y" }} me | <a href="/privacy.html">Privacy Policy</a></p>
     </div>
     <script>
         var images = document.querySelectorAll("#content img");
